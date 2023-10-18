@@ -43,7 +43,7 @@ int32_t get_data_channels(Frame *frame, int32_t channel_len) {
 void setup() {
   Serial.begin(115200);
   //a2dp_source.set_auto_reconnect(false);
-  a2dp_source.start("Magnetic Speaker", get_data_channels);  
+  a2dp_source.start("JBL Go 3", get_data_channels);  
   a2dp_source.set_volume(20);
 }
 
