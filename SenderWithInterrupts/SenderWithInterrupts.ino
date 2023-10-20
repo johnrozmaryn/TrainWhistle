@@ -42,7 +42,7 @@ unsigned long last_button_time = 0;
 
 void IRAM_ATTR ISR() {
   button_time = millis();
-  if (button_time - last_button_time > 100)
+  if (button_time - last_button_time > 200)
   {
     a2dp_source.write_data(data);
     last_button_time = button_time;
@@ -59,7 +59,7 @@ void setup() {
   // initialize the LED pin as an output:
   pinMode(ledPin, OUTPUT);
   // initialize the pushbutton pin as an input:
-  pinMode(buttonPin, INPUT); 
+  pinMode(buttonPin, INPUT_PULLDOWN); 
 
   attachInterrupt(buttonPin, ISR, RISING);
 
